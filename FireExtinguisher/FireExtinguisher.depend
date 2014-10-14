@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1413214347 source:c:\users\user\desktop\cs 196\fireextinguisher\extinguisher.c
+	<stdio.h>
+	<dirent.h>
+	<stdio.h>
+
