@@ -3,14 +3,24 @@
 
 int main()
 {
-
+//Kevin Chang
    FILE *fp;
-    char str[] = "del \"C:\\Users\\USER\\Documents\\GitHub\\CS-196-PC-Hacks\\FireExtinguisher\\bin\\Debug\\FireExtinguisher.exe\" \r\ndel \"C:\\Users\\USER\\Documents\\GitHub\\CS-196-PC-Hacks\\FireExtinguisher\\bin\\Debug\\text.bat\"";
+    char str[500];
+    char address[] = " \"C:\\Users\\USER\\Documents\\GitHub\\CS-196-PC-Hacks\\FireExtinguisher\\"; //change this to the customizable address
+    strcpy(str, "del ");
+    strcat(str, address);
+    strcat(str,"Extinguisher.exe\"");
+    strcat(str, "\r\ndel ");
+    strcat(str, address);
+    strcat(str,"text.bat\"");
+
+
 
     fp = fopen( "text.txt" , "ab+" );
     fputs(str, fp);
     fclose(fp);
 
+//change txt to bat
     int ret;
    char oldname[] = "text.txt";
    char newname[] = "text.bat";
