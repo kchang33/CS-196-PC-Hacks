@@ -5,7 +5,6 @@ int main()
 {
    FILE *fp;
     char str[500];
-  //  char address[] = " \"C:\\Users\\USER\\Documents\\GitHub\\CS-196-PC-Hacks\\FireExtinguisher\\"; //change this to the customizable address
     char address[] = "%USERPROFILE%\\Downloads\\";
     char del[] = "\r\ndel ";
     strcpy(str, "del ");
